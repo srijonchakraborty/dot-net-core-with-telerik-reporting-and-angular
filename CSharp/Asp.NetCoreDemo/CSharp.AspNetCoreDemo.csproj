@@ -1,0 +1,97 @@
+﻿
+
+
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName></SccProjectName>
+    <SccProvider></SccProvider>
+    <SccAuxPath></SccAuxPath>
+    <SccLocalPath></SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Telerik Reporting</Authors>
+    <Company>Progress</Company>
+    <Product>Telerik Reporting Demo</Product>
+    <Description>Telerik Reporting HTML5 Viewer and Telerik Reporting REST Service demo</Description>
+    <UserSecretsId>9ceee523-36b2-4764-8f4b-b6767ac4d82c</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="wwwroot\ReportViewer\**" />
+    <Compile Remove="wwwroot\Scripts\**" />
+    <Compile Remove="wwwroot\styles\**" />
+    <Compile Remove="wwwroot\templates\**" />
+    <Content Remove="wwwroot\ReportViewer\**" />
+    <Content Remove="wwwroot\Scripts\**" />
+    <Content Remove="wwwroot\styles\**" />
+    <Content Remove="wwwroot\templates\**" />
+    <EmbeddedResource Remove="wwwroot\ReportViewer\**" />
+    <EmbeddedResource Remove="wwwroot\Scripts\**" />
+    <EmbeddedResource Remove="wwwroot\styles\**" />
+    <EmbeddedResource Remove="wwwroot\templates\**" />
+    <None Remove="wwwroot\ReportViewer\**" />
+    <None Remove="wwwroot\Scripts\**" />
+    <None Remove="wwwroot\styles\**" />
+    <None Remove="wwwroot\templates\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\restApiServer.html" />
+    <Content Remove="wwwroot\ScriptsLicenseHeader.txt" />
+    <Content Remove="wwwroot\viewer.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--The following lines are replaced with package refs during the product build-->
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.7.2" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="System.IO.Packaging" Version="4.7.0" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+    <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
+    <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="4.7.0" />
+    <PackageReference Include="System.Security.Permissions" Version="4.7.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.0" />
+    <PackageReference Include="System.Threading.AccessControl" Version="4.7.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(AutomaticBuild)'!='true'">
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\Scripts\themeSwitcher.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Telerik.Reporting">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Progress\Telerik Reporting R1 2020\Bin\netstandard2.0\Telerik.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.OpenXmlRendering.2.7.2">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Progress\Telerik Reporting R1 2020\Bin\netstandard2.0\Telerik.Reporting.OpenXmlRendering.2.7.2.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.Services.AspNetCore">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Progress\Telerik Reporting R1 2020\Bin\netcoreapp3.0\Telerik.Reporting.Services.AspNetCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WebReportDesigner.Services">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Progress\Telerik Reporting R1 2020\Bin\netstandard2.0\Telerik.WebReportDesigner.Services.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  </Target>
+</Project>

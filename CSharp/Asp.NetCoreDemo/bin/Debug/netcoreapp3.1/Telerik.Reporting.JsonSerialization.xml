@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Reporting.JsonSerialization</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Reporting.JsonSerialization.CustomTypesResolver">
+            <summary>
+            Class to help resolving .NET types that are not directly resolvable or have unnecessary heavy structure (CultureInfo, Encoding, etc.)
+            The class replaces the .NET type with a custom type created at runtime for serialization needs.
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.JsonSerialization.ReportJsonSerializer">
+            <summary>
+            Serializes and deserializes objects into and from JSON.
+            This class is dedicated for serializing and deserializing objects
+            only from the <see cref="N:Telerik.Reporting"/> namespace.
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.ReportJsonSerializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Reporting.JsonSerialization.ReportJsonSerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.ReportJsonSerializer.Serialize(System.IO.TextWriter,System.Object,Newtonsoft.Json.Formatting)">
+            <summary>
+            Serializes the specified value and writes the JSON document to the specified <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+            <param name="writer">The <see cref="T:System.IO.TextWriter"/> used to write the JSON document.</param>
+            <param name="value">The value to serialize.</param>
+            <param name="formatting">Specifies formatting options for the JsonTextWriter. Default is Formatting.None.</param>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.ReportJsonSerializer.Deserialize(System.IO.Stream)">
+            <summary>
+            Deserializes the JSON document contained by the specified <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> that contains the JSON document to deserialize.</param>
+            <returns>The <see cref="N:Telerik.Reporting"/> object being deserialized.</returns>
+            <remarks>
+            Use the <i>stream</i> parameter to specify an object that derives from the <see cref="T:System.IO.Stream"/> class,
+            which is designed to write to streams. Classes that derive from the <see cref="T:System.IO.Stream"/> class include: 
+            <see cref="T:System.IO.BufferedStream"/>, <see cref="T:System.IO.FileStream"/>, <see cref="T:System.IO.MemoryStream"/>, etc.
+            </remarks>
+            <example>
+            The following example deserializes an object using a <see cref="T:System.IO.Stream"/>:
+            <code lang="C#" source="CodeSnippets\CS\API\Telerik\Reporting\XmlSerializationSnippets.cs" region="StreamDeserializationSnippet" />
+            <code lang="VB" source="CodeSnippets\VB\API\Telerik\Reporting\XmlSerializationSnippets.vb" region="StreamDeserializationSnippet" />
+            </example>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.ReportJsonSerializer.Deserialize(System.String)">
+            <summary>
+            Deserializes the JSON string to a report document.
+            </summary>
+            <param name="value">The string that contains the JSON document.</param>
+            <returns>The <see cref="N:Telerik.Reporting"/> object being deserialized.</returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.WriteMember(Newtonsoft.Json.JsonTextWriter)">
+            <summary>
+            Serializes the current MemberInfo instance (property or field in Enum).
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.EnumToString(System.Type,System.Object)">
+            <summary>
+            Converts enum value to its string representation provided from the TypeConverter rather than returning the ordinal value of the enum member or the actual enum member name.
+            Example: UnitType members must be serialized with their short names ("px", "pt") rather than "Pixel", "Point", etc.
+            Example: ReportParameter.Type must be serialied as "Boolean", "String", etc. rather than 0, 4, etc.
+            </summary>
+            <param name="type"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.IsDisabledTypeConverter(System.ComponentModel.TypeConverter)">
+            <summary>
+            Returns if the type converter should be used on a case by case basis.
+            </summary>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.WriteNonDefaultValue``1(Newtonsoft.Json.JsonTextWriter,System.String,System.Func{``0})">
+            <summary>
+            Writes the current value if it differs from the default value for this type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="writer"></param>
+            <param name="elementName"></param>
+            <param name="getValueCallback"></param>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.WriteNonDefaultValue``1(Newtonsoft.Json.JsonTextWriter,System.String,System.Func{``0},System.Object[])">
+            <summary>
+            Writes the current value if it differs from the default value for this type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="writer"></param>
+            <param name="elementName"></param>
+            <param name="getValueCallback"></param>
+            <param name="defaultValue"></param>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetTypeDisplayName">
+            <summary>
+            Gets the value of the SRDescription attribute for the current type, falling back to the current type name.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetTypeDescription">
+            <summary>
+            Gets the value of the SRDescription attribute for the current type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetTypeDefaultProperty">
+            <summary>
+            Gets the value of the DefaultValue attribute for the current type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetTypeEditor">
+            <summary>
+            Returns the editor for the current type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetTypeWebDesignerEditor">
+            <summary>
+            Returns the specific webDesigner editor for the current type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetTypeInstanceTypes">
+            <summary>
+            Returns concatenated string with the typenames of all the instance types for the current type - see WebServiceDataSource.Authentication
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetMemberDisplayName">
+            <summary>
+            Gets the value of the SRDisplayName attribute for the current member
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetMemberDescription">
+            <summary>
+            Gets the value of the SRDescription attribute for the current member
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetPropertyIsMergeable">
+            <summary>
+            Get the value of the MergableProperty attribute for the current member
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetPropertyNotifyParent">
+            <summary>
+            Gets the value of the NotifyParent attribute for the current property
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetPropertyDefaultValue">
+            <summary>
+            Gets the value of the DefaultValue attribute for the current property
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetPropertyReportPropertyName">
+            <summary>
+            Returns the report property used by the current member
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetMemberCategory">
+            <summary>
+            Gets the value of the Category attribute for the current member
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetBindingScope">
+            <summary>
+            Gets the value of the BindingScope attribute for the current member
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetMemberEditor">
+            <summary>
+            Returns the editor type for the current member
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetMemberWebDesignerEditor">
+            <summary>
+            Returns the editor type for the current member
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.JsonSerialization.TypeSchemaSerializer.GetMemberInstanceTypes">
+            <summary>
+            Returns concatenated string with the typenames of all the instance types for the current type - see WebServiceDataSource.Authentication
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,429 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Reporting.Services.AspNetCore</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Reporting.Services.AspNetCore.ClientReportSource">
+            <summary>
+            Represents a report source passed to the ReportsControllerBase from its clients.
+            </summary>
+            <seealso cref="T:Telerik.Reporting.ReportSource"/>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.ClientReportSource.Report">
+            <summary>
+            Gets or sets a string representation of a report document reference
+            </summary>
+            <remarks>
+            The string representation should be of a <see cref="T:Telerik.Reporting.TypeReportSource"/> or of an <see cref="T:Telerik.Reporting.UriReportSource"/>.
+            The rest of the report sources types are not supported.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.ClientReportSource.ParameterValues">
+            <summary>
+            Gets or sets a dictionary representing name-value pairs of parameter name and value passed to the reporting engine.
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Services.AspNetCore.CreateDocumentArgs">
+            <summary>
+            Represents the arguments passed to the CreateDocument method of the <see cref="T:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.CreateDocumentArgs.Format">
+            <summary>
+            The rendering format of the created document
+            </summary>
+            <remarks>
+            See the full list of built-in formats in the help article
+            <conceptualLink target="935C2C81-69FB-4EE7-B104-C317A615D294">Rendering Extensions</conceptualLink>
+            </remarks>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.CreateDocumentArgs.DeviceInfo">
+            <summary>
+            Device setting for the specified format
+            </summary>
+            <remarks>
+            More info on the device setting may be found in the help chapter
+            <conceptualLink target="7B7459C1-F91D-4220-BC72-68804CD6B554">Device Information Settings</conceptualLink>
+            </remarks>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.CreateDocumentArgs.UseCache">
+            <summary>
+            Determines if the returned document should be returned from cached resources if available.
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.CreateDocumentArgs.BaseDocumentID">
+            <summary>
+            Determines a base document from the cache that should service as interactivity blueprint.
+            </summary>
+            <remarks>
+            Applicable only when UseCache=true.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.CreateDocumentArgs.ActionID">
+            <summary>
+            Determines the server interactivity action that should be triggered over an existing document in order
+            to generate the new document.
+            </summary>
+            <remarks>
+            Applicable only when BaseDocumentID is provided.
+            </remarks>
+        </member>
+        <member name="T:Telerik.Reporting.Services.AspNetCore.ReportFileResolver">
+            <summary>
+            Creates an <see cref="T:Telerik.Reporting.UriReportSource"/> instance from relative path to .trdx file
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportFileResolver.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Reporting.Services.AspNetCore.ReportFileResolver" /> class. 
+            </summary>
+            <param name="repositoryDirectory">Physical directory where .trdx reports are located. 
+            Used as path prefix when relative path is passed for resolving.</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportFileResolver.ResolveReport(System.String)">
+            <summary>
+            Creates a <see cref="T:Telerik.Reporting.UriReportSource" /> based on its string representation.
+            </summary>
+            <remarks>
+            Accepts relative and absolute paths
+            </remarks>
+            <param name="report">The string report representation to resolve</param>
+            <returns>The resulting report source</returns>
+        </member>
+        <member name="T:Telerik.Reporting.Services.AspNetCore.ReportTypeResolver">
+            <summary>
+            Resolves IReportDocument from report type name
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportTypeResolver.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Reporting.Services.AspNetCore.ReportTypeResolver" /> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportTypeResolver.ResolveReport(System.String)">
+            <summary>
+            Creates a <see cref="T:Telerik.Reporting.TypeReportSource" /> from a report type name.
+            </summary>
+            <param name="report">Report type name</param>
+            <returns>The resulting report source</returns>
+        </member>
+        <member name="T:Telerik.Reporting.Services.AspNetCore.ReportResolverBase">
+            <summary>
+            Base report resolver with fallback mechanism
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportResolverBase.AddFallbackResolver(Telerik.Reporting.Services.Engine.IReportResolver)">
+            <summary>
+            Adds fallback resolver that will be used if the current resolver does not succeed.
+            </summary>
+            <param name="fallbackResolver">The fallback resolver</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportResolverBase.Telerik#Reporting#Services#Engine#IReportResolver#Resolve(System.String)">
+            <summary>
+            Creates a <see cref="T:Telerik.Reporting.ReportSource" /> based on its string representation.
+            </summary>
+            <param name="report">The string report representation to resolve</param>
+            <returns>The resulting report source</returns>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportResolverBase.ResolveReport(System.String)">
+            <summary>
+            Creates a <see cref="T:Telerik.Reporting.ReportSource" /> based on its string representation.
+            </summary>
+            <remarks>
+            Override this member in order to implement the core resolve functionality.
+            </remarks>
+            <param name="report">The string report representation to resolve</param>
+            <returns>The resulting report source</returns>
+        </member>
+        <member name="T:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase">
+            <summary>
+            Base Web API controller for exposing the Telerik Reporting REST Service in an ASP.NET Core application.
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.ExecuteInteractiveAction(System.String,System.String,System.String,System.String)">
+            <summary>
+            Executes an interactive action that should be applied on the server
+            </summary>
+            <param name="clientID">The client session ID which contains the document</param>
+            <param name="instanceID">The report instance used for the document</param>
+            <param name="documentID">The ID of the affected document</param>
+            <param name="actionID">The ID of the executed action</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.RegisterClient">
+            <summary>
+            Registers new HTTP service client
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.UnregisterClient(System.String)">
+            <summary>
+            Removes existing client of the HTTP service by its ID
+            </summary>
+            <remarks>
+            All cached data for the client will be cleared.
+            </remarks>
+            <param name="clientID">The ID of the client to be removed</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.#ctor(Telerik.Reporting.Services.IReportServiceConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase"/> class.
+            </summary>
+            <param name="reportServiceConfiguration">When inheriting the ReportsControllerBase controller basic configuration is needed.
+            Provide an object implementing the <see cref="T:Telerik.Reporting.Services.IReportServiceConfiguration"/>
+            in order to configure the report service.</param>
+            <seealso cref="T:Telerik.Reporting.Services.IReportServiceConfiguration"/>
+            <seealso cref="T:Telerik.Reporting.Services.ReportServiceConfiguration"/>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.ReportServiceConfiguration" -->
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetBasePath">
+            <summary>
+            Gets the base path for document resources, e.g. images.
+            </summary>
+            <returns>The base path.</returns>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.CreateReportResolver">
+            <summary>
+            Creates an <see cref="T:Telerik.Reporting.Services.Engine.IReportResolver"/> implementation instance
+            that will be used for report resolving from the service.
+            </summary>
+            <remarks>
+            Override this method in order to create the report resolver instance.
+            May be one of the built-in report resolvers or a custom implementation resolver. Built-in resolvers may be chained.
+            </remarks>
+            <seealso cref="T:Telerik.Reporting.Services.Engine.IReportResolver"/>
+            <seealso cref="!:Telerik.Reporting.Services.WebApi.ReportFileResolver"/>
+            <seealso cref="!:Telerik.Reporting.Services.WebApi.ReportTypeResolver"/>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.CreateCache">
+            <summary>
+            Creates an <see cref="T:Telerik.Reporting.Cache.Interfaces.ICache"/> implementation instance
+            that will be used for internal storage from the service.
+            </summary>
+            <remarks>
+            Override this method in order to create the cache instance.
+            May be one of the built-in caching implementations or a custom implementation.
+            To use one of the built-in caching implementations use the <seealso cref="T:Telerik.Reporting.Services.Engine.CacheFactory"/> class.
+            </remarks>
+            <returns>An instance of cache that will be used from the controller in order to preserve its cache/state.</returns>
+            <seealso cref="T:Telerik.Reporting.Services.Engine.CacheFactory"/>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.CreateStorage">
+            <summary>
+            Creates an <see cref="T:Telerik.Reporting.Cache.Interfaces.IStorage"/> implementation instance
+            that will be used for internal storage from the service.
+            </summary>
+            <remarks>
+            Override this method in order to create the storage instance.
+            May be one of the built-in storage implementations or a custom implementation.
+            <seealso cref="T:Telerik.Reporting.Cache.MsSqlServerStorage"/>
+            <seealso cref="!:Telerik.Reporting.Cache.StackExchangeRedis.RedisStorage"/>
+            </remarks>
+            <returns>An instance of storage that will be used from the controller in order to preserve its cache/state.</returns>
+            <seealso cref="T:Telerik.Reporting.Services.Engine.CacheFactory"/>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.CreateReportingEngineConfiguration">
+            <summary>
+            Creates an <see cref="!:https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.configuration.iconfiguration?view=aspnetcore-2.1">IConfiguration</see> instance
+            that will be used for configuring the reporting engine.
+            </summary>
+            <remarks>
+            Override this method in order to provide the configuration instance.
+            </remarks>
+            <returns>An instance of IConfiguration that will be passed to the reporting engine before processing the reports.</returns>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.CreateDocument(System.String,System.String,Telerik.Reporting.Services.AspNetCore.CreateDocumentArgs)">
+            <summary>
+            Creates new document using specific format and format settings
+            </summary>
+            <param name="clientID">The clientID in which session the document is created</param>
+            <param name="instanceID">The report instance used for the document</param>
+            <param name="args">Arguments containing the document format and settings</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.DeleteDocument(System.String,System.String,System.String)">
+            <summary>
+            Deletes concrete document by its ID.
+            </summary>
+            <param name="clientID">The client session ID which contains the deleted document</param>
+            <param name="instanceID">The report instance used for the document</param>
+            <param name="documentID">The ID of the deleted document</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetDocumentInfo(System.String,System.String,System.String)">
+            <summary>
+            Gets info for a requested document
+            </summary>
+            <param name="clientID">The client session ID which contains the document</param>
+            <param name="instanceID">The report instance used for the document</param>
+            <param name="documentID">The ID of the document</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetDocument(System.String,System.String,System.String)">
+            <summary>
+            Gets the document for a single-stream document formats
+            </summary>
+            <param name="clientID">The client session ID which contains the document</param>
+            <param name="instanceID">The report instance used for the document</param>
+            <param name="documentID">The ID of the document</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetUserIdentity">
+            <summary>
+            Override this method to substitute the default <see cref="T:Telerik.Reporting.Processing.UserIdentity"/> retrieval logic,
+            which uses Microsoft.AspNetCore.Mvc.ControllerBase.User.Identity
+            </summary>
+            <returns>The UserIdentity object instance, that can be later retrieved by 
+            <see cref="P:Telerik.Reporting.Processing.UserIdentity.Current"/> property or by using expression =UserIdentity</returns>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetDocumentFormats">
+            <summary>
+            Gets the available document formats.
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.CreateInstance(System.String,Telerik.Reporting.Services.AspNetCore.ClientReportSource)">
+            <summary>
+            Creates a new report instance in a client session
+            </summary>
+            <param name="clientID">The clientID for which the instance is created</param>
+            <param name="reportSource">The report source which defines the report instance</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.DeleteInstance(System.String,System.String)">
+            <summary>
+            Deletes a report instance in a client session
+            </summary>
+            <param name="clientID">The clientID for which the instance is deleted</param>
+            <param name="instanceID">The instanceID that is deleted</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetParameters(System.String,Telerik.Reporting.Services.AspNetCore.ClientReportSource)">
+            <summary>
+            Gets the report parameters for a concrete client and report source
+            </summary>
+            <param name="clientID">The clientID for which the parameters are retrieved</param>
+            <param name="reportSource">The report source for which the parameters are retrieved</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetPage(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Gets a page from a document in a multi-stream document format
+            </summary>
+            <param name="clientID">The client session ID which contains the document</param>
+            <param name="instanceID">The report instance used for the document</param>
+            <param name="documentID">The ID of the document</param>
+            <param name="pageNumber">The number of the requested page (1-based)</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetResource(System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets a resource part of a document in multi-stream document format
+            </summary>
+            <param name="clientID">The client session ID which contains the document</param>
+            <param name="instanceID">The report instance used for the document</param>
+            <param name="documentID">The ID of the document</param>
+            <param name="resourceID">The ID of the requested resource</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetResource(System.String,System.String)">
+            <summary>
+            Gets an embedded report viewer resource.
+            </summary>
+            <param name="folder">The folder in which the resource is.</param>
+            <param name="resourceName">The name of the resource.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.GetSearchResults(System.String,System.String,System.String,Telerik.Reporting.Services.AspNetCore.SearchArgs)">
+            <summary>
+            Retrieves the search metadata from resources and returns the search results that satisfies the passed arguments
+            </summary>
+            <param name="clientID">The clientID in which session the document is created</param>
+            <param name="instanceID">The report instance used for the document</param>
+            <param name="documentID">The ID of the deleted document</param>
+            <param name="args">The arguments used to perform the search</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.SendDocument(System.String,System.String,System.String,Telerik.Reporting.Services.AspNetCore.SendDocumentArgs)">
+            <summary>
+            Sends an e-mail message containing a report document to its recipients.
+            </summary>
+            <param name="clientID">The clientID in which session the document is created</param>
+            <param name="instanceID">The report instance used for the document</param>
+            <param name="documentID">The ID of the rendered document</param>
+            <param name="args">The arguments used to send a mail message</param>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.CreateMailMessage(Telerik.Reporting.Services.AspNetCore.SendDocumentArgs,Telerik.Reporting.Services.Engine.DocumentData)">
+            <summary>
+            Creates the mail message that will be used in SendDocument
+            </summary>
+            <param name="args">The args to use in the mail message</param>
+            <param name="result">The document to attach to the mail message</param>
+            <returns>Mail message</returns>
+        </member>
+        <member name="M:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase.SendMailMessage(System.Net.Mail.MailMessage)">
+            <summary>
+            Sends an e-mail message containing a report document to its recipients. 
+            Override this method in order to effectively send the mail message.
+            </summary>
+            <remarks>
+            The default implementation of this method is empty. Override this method in order to use the feature.
+            </remarks>
+            <example>
+            <code lang="C#" source="CodeSnippets\MvcCS\Controllers\ReportsController.cs" region="SendMailMessage_Implementation" />
+            <code lang="VB" source="CodeSnippets\MvcVB\Controllers\ReportsController.vb" region="SendMailMessage_Implementation" />
+            </example>
+            <param name="mailMessage">The mail message to send</param>
+            <returns>The default value is NotImplemented.</returns>
+        </member>
+        <member name="T:Telerik.Reporting.Services.AspNetCore.SearchArgs">
+            <summary>
+            Represents the arguments passed to the GetSearchResults method of the <see cref="T:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.SearchArgs.SearchToken">
+            <summary>
+            The token (word or phrase) used to search by.
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.SearchArgs.MatchCase">
+            <summary>
+            Determines if the search is case-sensitive
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.SearchArgs.MatchWholeWord">
+            <summary>
+            Determines if the search should respect whole words only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.SearchArgs.UseRegularExpressions">
+            <summary>
+            Determines if the search token represents a regular expression
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Services.AspNetCore.SendDocumentArgs">
+            <summary>
+            Represents the mail message arguments passed to the SendDocument method of the <see cref="T:Telerik.Reporting.Services.AspNetCore.ReportsControllerBase"/>
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.SendDocumentArgs.From">
+            <summary>
+            The mail message From part
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.SendDocumentArgs.To">
+            <summary>
+            The mail message To part
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.SendDocumentArgs.Cc">
+            <summary>
+            The mail message Cc part
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.SendDocumentArgs.Subject">
+            <summary>
+            The mail message Subject part
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Services.AspNetCore.SendDocumentArgs.Body">
+            <summary>
+            The mail message Body part
+            </summary>
+        </member>
+    </members>
+</doc>

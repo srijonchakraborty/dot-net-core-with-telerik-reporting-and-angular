@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.WebReportDesigner.Services</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.WebReportDesigner.Services.ConnectionsPermissions">
+            <summary>
+            Represents a container for connection permissions
+            </summary>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.ConnectionsPermissions.CanAddSharedConnection">
+            <summary>
+            Contains permission whether the user can add shared connection
+            </summary>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.ConnectionsPermissions.CanEmbeddedConnection">
+            <summary>
+            Contains permission whether the user can add embedded connection
+            </summary>
+        </member>
+        <member name="T:Telerik.WebReportDesigner.Services.Controllers.DataSourceInfo">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.Controllers.DataSourceInfo.NetType">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.Controllers.DataSourceInfo.DataSource">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="T:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase">
+            <summary>
+            Base API controller for exposing the Telerik Report Designer Service in an ASP.NET Core application.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.#ctor(Telerik.WebReportDesigner.Services.IReportDesignerServiceConfiguration,Telerik.Reporting.Services.IReportServiceConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase"/> class.
+            When inheriting the ReportDesignerControllerBase controller basic configuration is needed.
+            </summary>
+            <param name="reportDesignerServiceConfiguration">
+            Provide an object implementing the <see cref="!:Telerik.WebReportDesigner.Services.AspNet.Core.IReportDesignerServiceConfiguration"/>
+            in order to configure the service.</param>
+            <seealso cref="!:Telerik.WebReportDesigner.Services.AspNet.Core.IReportDesignerServiceConfiguration"/>
+            <param name="reportServiceConfiguration">
+            Provide an object implementing the <see cref="T:Telerik.Reporting.Services.IReportServiceConfiguration"/> in order to configure the service.</param>
+            <seealso cref="!:Telerik.WebReportDesigner.Services.AspNet.Core.IReportDesignerServiceConfiguration"/>
+            <seealso cref="!:Telerik.WebReportDesigner.Services.AspNet.Core.ReportDesignerServiceConfiguration"/>
+            <seealso cref="T:Telerik.Reporting.Services.IReportServiceConfiguration"/>
+            <seealso cref="T:Telerik.Reporting.Services.ReportServiceConfiguration"/>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.ReportDesignerServiceConfiguration">
+            <summary>
+            Gets or sets the configuration of the web report designer service.
+            </summary>
+            <remarks>
+            When inheriting the ReportDesignerControllerBase controller basic configuration is needed.
+            Provide an object implementing the <see cref="!:Telerik.WebReportDesigner.Services.AspNet.Core.IReportDesignerServiceConfiguration"/>
+            in order to configure the service. This should be done in the
+            controllers' constructor using static object to preserve the configuration
+            between requests or using dependency injection.
+            </remarks>
+            <seealso cref="!:Telerik.WebReportDesigner.Services.AspNet.Core.IReportDesignerServiceConfiguration"/>
+            <seealso cref="!:Telerik.WebReportDesigner.Services.AspNet.Core.ReportDesignerServiceConfiguration"/>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetTypeSchema(System.String)">
+            <summary>
+            Gets the type schema for the requested type.
+            </summary>
+            <param name="typeName">The name of the type.</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetDefaultComponent(System.String)">
+            <summary>
+            Gets the component's default property store.
+            </summary>
+            <param name="typeName">The name of the component type.</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.ListFonts">
+            <summary>
+            Lists all avaliable fonts.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.PaperSizes">
+            <summary>
+            Lists all avaliable paper kinds with their size.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.CultureContext">
+            <summary>
+            Returns a set with culture-based properties used in serialization.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetExpressionBuilderHierarchy">
+            <summary>
+            Returns the expression builder hierarchy.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetExpressionBuilderParametersHierarchy(System.Object)">
+            <summary>
+            Returns the hierarchy of expression builder parameters hierarchy.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetWizardStyleSheets(System.String)">
+            <summary>
+            Returns a list of design-time stylesheets.
+            </summary>
+            <param name="typeName">The design-time item type name.</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetDesignerResource(System.String,System.String)">
+            <summary>
+            Gets an embedded report viewer resource.
+            </summary>
+            <param name="folder">The folder in which the resource is.</param>
+            <param name="resourceName">The name of the resource.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.CanConnect(Telerik.Reporting.Data.Schema.ConnectionInfo)">
+            <summary>
+            Gets the connection availability for a specified connection string.
+            </summary>
+            <param name="input">Connection model</param>
+            <returns>Boolean result.</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetConnectionsPermissions">
+            <summary>
+            Add the connection to the connection storage.
+            </summary>
+            <param name="input">Connection model</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.AddConnection(Telerik.Reporting.Data.Schema.ConnectionInfo)">
+            <summary>
+            Add the connection to the connection storage.
+            </summary>
+            <param name="input">Connection model</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetDataConnections">
+            <summary>
+            Returns a collection of all data connections.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetProceduresSchema(Telerik.Reporting.Data.Schema.ConnectionInfo)">
+            <summary>
+            Returns the procedures for the specified data connection.
+            </summary>
+            <param name="input">Connection model</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetDataConnectionProviders">
+            <summary>
+            Returns a collection of all DB providers.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetSqlParameters(Telerik.Reporting.Data.Schema.QueryInfoWithParameters)">
+            <summary>
+            Returns a collection of all SQL parameters.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetSqlPreviewData(Telerik.Reporting.Data.Schema.PreviewDataInfoWithParameters)">
+            <summary>
+            Returns a collection of all SQL parameters.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetDataModel(Telerik.WebReportDesigner.Services.Controllers.DataSourceInfo)">
+            <summary>
+            Returns the fields data model for the specified data connection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.InternalServerError(System.Exception)">
+            <summary>
+            Creates Internal Server Error (500) status code result and traces.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.RenderGraph">
+            <summary>
+            Renders a graph item to PNG and returns the rendered image.
+            </summary>
+            <returns>PNG bytes.</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.RenderMap">
+            <summary>
+            Renders a map item to PNG and returns the rendered image.
+            </summary>
+            <returns>PNG bytes.</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.RenderBarcode">
+            <summary>
+            Renders a barcode item to PNG and returns the rendered image.
+            </summary>
+            <returns>PNG bytes.</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.RenderHtmlTextBox">
+            <summary>
+            Renders a HtmlTextBox item to PNG and returns the rendered image.
+            </summary>
+            <returns>PNG bytes.</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.RenderShape">
+            <summary>
+            Renders a Shape item to PNG and returns the rendered image.
+            </summary>
+            <returns>PNG bytes</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.RenderCheckBox">
+            <summary>
+            Renders a CheckBox item and returns the rendered HTML.
+            </summary>
+            <returns>PNG bytes</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.RenderPictureBox">
+            <summary>
+            Renders a PictureBox item to PNG and returns the rendered image.
+            </summary>
+            <returns>PNG bytes</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.ListReports">
+            <summary>
+            Lists all avaliable report definitions.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.GetReport(System.String)">
+            <summary>
+            Gets the report definition.
+            </summary>
+            <param name="reportId">The report identifier.</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.SaveReport(System.String)">
+            <summary>
+            Creates a new report or updates an existing report.
+            </summary>
+            <param name="reportId">The report identifier.</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.Controllers.ReportDesignerControllerBase.DeleteReport(System.String)">
+            <summary>
+            Deletes a report.
+            </summary>
+            <param name="reportId">The report identifier.</param>
+        </member>
+        <member name="T:Telerik.WebReportDesigner.Services.FileDefinitionStorage">
+            <summary>
+            Represents a file definition storage to resolve report definitions from local directory. 
+            </summary>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.FileDefinitionStorage.BaseDir">
+            <summary>
+            Returns the base directory used to access the report definitions .
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.FileDefinitionStorage.#ctor(System.String)">
+            <summary>
+            Creates a new file storage for report definitions.
+            </summary>
+            <param name="baseDir">The base directory where the report definitions are stored.</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.FileDefinitionStorage.ListDefinitions">
+            <summary>
+            Lists all report definition files found in the baseDir folder specified in the constructor.
+            </summary>
+            <returns>A list of all report definition filenames (with extensions) present in the base directory.</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.FileDefinitionStorage.GetDefinition(System.String)">
+            <summary>
+            Finds a report definition file by its id. The id is the full filename (with extension).
+            </summary>
+            <param name="definitionId">The report definition filename (with extension).</param>
+            <returns>The bytes of the report definition.</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.FileDefinitionStorage.SaveDefinition(System.String,System.Byte[])">
+            <summary>
+            Creates new or overwrites an existing report definition file with the provided definition bytes.
+            </summary>
+            <param name="definitionId">The report definition filename including the file extension.</param>
+            <param name="definition">The new bytes of the report definition.</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.FileDefinitionStorage.DeleteDefinition(System.String)">
+            <summary>
+            Deletes an existing report definition file.
+            </summary>
+            <param name="definitionId">The report definition filename including the file extension.</param>
+        </member>
+        <member name="T:Telerik.WebReportDesigner.Services.FileSettingsStorage">
+            <summary>
+            Represents a database connections storage to resolve ConnectionStrings. 
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.FileSettingsStorage.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of the class with specified location for the designer settings file.
+            </summary>
+            <param name="settingsDirectory">The directory to keep the Web Report Designer settings</param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.FileSettingsStorage.GetConnections">
+            <summary>
+            Lists all connections found in the project configuration .
+            </summary>
+            <returns>A list of all connection string present in the project configuration.</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.FileSettingsStorage.AddConnection(Telerik.Reporting.Data.Schema.ConnectionInfo)">
+            <summary>
+            Add connections current user application configuration file.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebReportDesigner.Services.IDefinitionStorage">
+            <summary>
+            Represents a definition storage
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.IDefinitionStorage.ListDefinitions">
+            <summary>
+            Returns all report definitions ids available in the definition storage.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.IDefinitionStorage.GetDefinition(System.String)">
+            <summary>
+            Finds a report definition by its id and returns its bytes.
+            </summary>
+            <param name="definitionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.IDefinitionStorage.SaveDefinition(System.String,System.Byte[])">
+            <summary>
+            Saves the new bytes of a report definition id.
+            </summary>
+            <param name="definitionId"></param>
+            <param name="definition"></param>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.IDefinitionStorage.DeleteDefinition(System.String)">
+            <summary>
+            Deletes a report definition by its id.
+            </summary>
+            <param name="definitionId"></param>
+        </member>
+        <member name="T:Telerik.WebReportDesigner.Services.ISettingsStorage">
+            <summary>
+            Represents a database connection storage
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.ISettingsStorage.GetConnections">
+            <summary>
+            Lists all connections found in the project configuration .
+            </summary>
+            <returns>A list of all connection string present in the project configuration.</returns>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.ISettingsStorage.AddConnection(Telerik.Reporting.Data.Schema.ConnectionInfo)">
+            <summary>
+            Add connections current user application configuration file.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebReportDesigner.Services.ReportDesignerServiceConfiguration">
+            <summary>
+            Default implementation of the <see cref="T:Telerik.WebReportDesigner.Services.IReportDesignerServiceConfiguration"/> interface.
+            </summary>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.ReportDesignerServiceConfiguration.DefinitionStorage">
+            <summary>
+            Gets or sets an <see cref="T:Telerik.WebReportDesigner.Services.IDefinitionStorage"/>
+            implementation instance that will be used to open, save, and list available report definitions.
+            </summary>
+            <remarks>
+            Use this property setter in order to provide a report definition storage instance.
+            Set a built-in definition storage implementation or a custom implementation.
+            This is mandatory setting without defaults.
+            </remarks>
+            <seealso cref="T:Telerik.WebReportDesigner.Services.FileDefinitionStorage"/>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.ReportDesignerServiceConfiguration.SettingsStorage">
+            <summary>
+            Gets or sets an <see cref="T:Telerik.WebReportDesigner.Services.ISettingsStorage"/>
+            implementation instance that will be used to list and save the available database connections.
+            </summary>
+            <remarks>
+            Use this property setter in order to provide a database connnection storage instance.
+            Set a built-in database connection storage implementation or a custom implementation.
+            This is mandatory setting without defaults.
+            </remarks>
+            <seealso cref="T:Telerik.WebReportDesigner.Services.FileSettingsStorage"/>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.ReportDesignerServiceConfiguration.#ctor">
+            <summary>
+            Creates an instance of the ReportDesignerServiceConfiguration class.
+            </summary>
+        </member>
+        <member name="T:Telerik.WebReportDesigner.Services.IReportDesignerServiceConfiguration">
+            <summary>
+            Represents an object containing all dependencies and settings
+            which the web report designer service needs to operate.
+            </summary>
+            <seealso cref="T:Telerik.WebReportDesigner.Services.ReportDesignerServiceConfiguration"/>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.IReportDesignerServiceConfiguration.DefinitionStorage">
+            <summary>
+            Gets or sets an <see cref="T:Telerik.WebReportDesigner.Services.IDefinitionStorage"/>
+            implementation instance that will be used to open, save, and list available report definitions.
+            </summary>
+            <remarks>
+            Use this property setter in order to provide a report definition storage instance.
+            Set a built-in definition storage implementation or a custom implementation.
+            This is mandatory setting without defaults.
+            </remarks>
+            <seealso cref="T:Telerik.WebReportDesigner.Services.FileDefinitionStorage"/>
+        </member>
+        <member name="P:Telerik.WebReportDesigner.Services.IReportDesignerServiceConfiguration.SettingsStorage">
+            <summary>
+            Gets or sets an <see cref="T:Telerik.WebReportDesigner.Services.ISettingsStorage"/>
+            implementation instance that will be used to list and save the available database connections.
+            </summary>
+            <remarks>
+            Use this property setter in order to provide a database connnection storage instance.
+            Set a built-in database connection storage implementation or a custom implementation.
+            This is mandatory setting without defaults.
+            </remarks>
+            <seealso cref="T:Telerik.WebReportDesigner.Services.FileSettingsStorage"/>
+        </member>
+        <member name="T:Telerik.WebReportDesigner.Services.IReportDesignerServiceConfigurationExtensions">
+            <summary>
+            Provides static extension methods for objects that implement the <see cref="T:Telerik.WebReportDesigner.Services.IReportDesignerServiceConfiguration"/> interface.
+            </summary>
+        </member>
+        <member name="M:Telerik.WebReportDesigner.Services.IReportDesignerServiceConfigurationExtensions.Validate(Telerik.WebReportDesigner.Services.IReportDesignerServiceConfiguration)">
+            <summary>
+            Validates an object representing a web report designer service configuration.
+            </summary>
+            <param name="configuration">The object that should be validated.</param>
+            <remarks>
+            This method is used internally from the web report designer service.
+            </remarks>
+        </member>
+    </members>
+</doc>

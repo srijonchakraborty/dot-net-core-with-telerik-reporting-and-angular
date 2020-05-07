@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.WpfDemo", "WpfDemo\CSharp.WpfDemo.csproj", "{2C4643F0-38C3-4B1B-AC51-EE27D99BE457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.ReportLibrary", "ReportLibrary\CSharp.ReportLibrary.csproj", "{45DCEC9A-B73B-45F3-B199-DA974C511B6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.WebFormsDemo", "WebFormsDemo\CSharp.WebFormsDemo.csproj", "{7AAC4974-51B5-4E6F-B709-F8375A9BAE91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.WinFormsDemo", "WinFormsDemo\CSharp.WinFormsDemo.csproj", "{0118264D-5F05-4AE7-973B-30360AB3BFD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Html5Demo", "Html5Demo\CSharp.Html5Demo.csproj", "{3DE728C1-E30F-4472-848F-118405662B96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.MvcDemo", "MvcDemo\CSharp.MvcDemo.csproj", "{DB2A4737-8BDA-4474-B1D2-4EFD0731EB45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F9C22B6C-8F1B-4FBF-8E21-E1B41F7454CA}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2825703-BC63-4828-9258-A111A1D6ECF5}"
+	ProjectSection(SolutionItems) = preProject
+		..\Readme.txt = ..\Readme.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.AspNetCoreDemo", "Asp.NetCoreDemo\CSharp.AspNetCoreDemo.csproj", "{51C95359-8726-427B-A756-81A4BF8C1459}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.WinFormsCoreDemo", "WinFormsCoreDemo\CSharp.WinFormsCoreDemo.csproj", "{82F43D7C-0FB2-474B-B0AB-E0E455C9261E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.WpfCoreDemo", "WpfCoreDemo\CSharp.WpfCoreDemo.csproj", "{DAA912A3-B490-4AC3-BBA3-D2F6F0AF2CE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.BlazorHtml5Demo", "BlazorHtml5Demo\CSharp.BlazorHtml5Demo.csproj", "{17F8447C-5E0C-4177-B8C9-D0A5B205A52F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45DCEC9A-B73B-45F3-B199-DA974C511B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DCEC9A-B73B-45F3-B199-DA974C511B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DCEC9A-B73B-45F3-B199-DA974C511B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DCEC9A-B73B-45F3-B199-DA974C511B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51C95359-8726-427B-A756-81A4BF8C1459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51C95359-8726-427B-A756-81A4BF8C1459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51C95359-8726-427B-A756-81A4BF8C1459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51C95359-8726-427B-A756-81A4BF8C1459}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A5CEDC7-B26C-4AE4-814D-CAF4D92B4FD3}
+	EndGlobalSection
+EndGlobal

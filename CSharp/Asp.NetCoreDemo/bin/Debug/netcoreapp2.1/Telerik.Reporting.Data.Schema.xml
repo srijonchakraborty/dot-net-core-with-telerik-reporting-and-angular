@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Reporting.Data.Schema</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Reporting.Data.Schema.Compact.ObjectDataSourceParameter">
+            <summary>
+            Used for JSON serialization
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Data.Schema.ConnectionHelper.IsValidOpenEdgeConnection(System.Data.Odbc.OdbcFactory,System.String)">
+            <summary>
+            Tries to read the count of system tables from the OpenEdge server and returns true if any.
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.ConnectionInfo">
+            <summary>
+            Connection information
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.ConnectionInfo.Name">
+            <summary>
+            The connection name
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.ConnectionInfo.Provider">
+            <summary>
+            The connection data provider name
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.ConnectionInfo.ConnectionString">
+            <summary>
+            The ConnectionString
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.DbProviderInfo">
+            <summary>
+            Provides information about a data provider.
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.DbProviderInfo.Name">
+            <summary>
+            Specifies the data provider name.
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.DbProviderInfo.Description">
+            <summary>
+            Specifies the data provider description.
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Data.Schema.DefaultParameterNameProvider.GetParameterPrefix(Telerik.Reporting.Data.Schema.DefaultParameterNameProvider.ParameterNameBuilder)">
+            <summary>
+            Returns the parameter placeholder string for a parameter ordinal. 
+            NOTE: Respected is only the first character for easier comparison, because for MSSQL this method returns "@p0"
+            </summary>
+            <param name="parameterNameBuilder"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.DataSourceMemberAdapter.ApplyFilter">
+            <summary>
+            Only include members with DataObjectMethodAttribute applied
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.IObjectDataSourceTypesResolver">
+            <summary>
+            Represents a resolver service that returns all types that can be used from the ODS
+            and the model of their members
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Data.Schema.IObjectDataSourceTypesResolver.GetTypeModel">
+            <summary>
+            Gets all types suitable for DataSource in ODS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.Data.Schema.IObjectDataSourceTypesResolver.GetDataMemberModel(System.String,System.Boolean)">
+            <summary>
+            Gets all members of a type suitable for DataMember of ODS
+            </summary>
+            <param name="typeName"></param>
+            <param name="dataObjectMethodsOnly">Only include members with DataObjectMethodAttribute applied</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.Data.Schema.IObjectDataSourceTypesResolver.GetDataMemberModel(System.Object,System.Boolean)">
+            <summary>
+            Gets all members of a type suitable for DataMember of ODS
+            </summary>
+            <param name="instance"></param>
+            <param name="dataObjectMethodsOnly">Only include members with DataObjectMethodAttribute applied</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Reporting.Data.Schema.IObjectDataSourceTypesResolver.GetDataModel(Telerik.Reporting.ObjectDataSource)">
+            <summary>
+            Gets the data schema (the fields) of a configured ODS
+            </summary>
+            <param name="dataSource"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.IObjectDataSourceTypesResolver.IsInProcess">
+            <summary>
+            Gets a value indicating if the target types of ODS are available in the same app process
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.ObjectBrowserImageHelper.AccessModifier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.ObjectBrowserImageHelper.IconType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.ObjectDataSourceTypeHelper">
+            <summary>
+            Helper methods to list Type-s as object data source
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.ObjectDataSourceInstanceHelper">
+            <summary>
+            Helper methods to list instances (DataSet, etc.) as object data source
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.TypeInfo.ParentType">
+            <summary>
+            From Type.DeclaringType
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.OdbcParameterNameProvider">
+            <summary>
+            ODBC command doesn't support named parameters. It marks all the parameters with a "?" placeholder and access them sequentially.
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.PreviewDataInfo">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.PreviewDataInfo.MaxRows">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.PreviewDataInfoWithParameters">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.PreviewDataInfoWithParameters.PreviewDataInfo">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.PreviewDataInfoWithParameters.Parameters">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.QueryInfo">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.QueryInfo.SelectCommandType">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.QueryInfo.SelectCommand">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.QueryInfo.CommandTimeout">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="M:Telerik.Reporting.Data.Schema.QueryInfo.#ctor">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.QueryInfoWithParameters">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.QueryInfoWithParameters.QueryInfo">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.QueryInfoWithParameters.Parameters">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Data.Schema.QueryInfoParameter">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.QueryInfoParameter.Name">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.QueryInfoParameter.Value">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="P:Telerik.Reporting.Data.Schema.QueryInfoParameter.DbType">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="T:Telerik.Reporting.Design.Common.ExpressionBuilder.DesignReportExpressionContext">
+            <summary>
+            Used from the ExpressionBuilder.
+            Those entries are design-time only and will lead to incorrect behavior
+            if present at runtime.
+            </summary>
+        </member>
+    </members>
+</doc>

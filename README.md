@@ -8,6 +8,7 @@ Sample ASP.NET Core 3 API Project for ANGULAR 7/8/9
 YouTube Link: https://www.youtube.com/watch?v=wlSkbkaFoBU&feature=youtu.be
 
 Important Articles:
+
 https://www.telerik.com/blogs/using-telerik-reporting-in-net-core-applications
 https://www.telerik.com/forums/report-designer-support-for-net-core (Check Admin's Suggestion)
 https://docs.telerik.com/reporting/manual-setup-of-html5-report-viewer-in-asp-net-core-3
